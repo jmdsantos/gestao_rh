@@ -6,7 +6,8 @@
       One of three columns
     </div>
     <div class="col-sm">
-      ola {{ usuario.funcionario.nome }}
+        ola {{ usuario.funcionario.nome }}
+        <a href="{% url 'list_funcionarios' %}">Gerenciar funcionários</a>
     </div>
     <div class="col-sm">
         <a href="{% url 'logout' %}">LogOut</a>
