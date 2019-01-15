@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    Lista de Departamentos
+    <br>
+    {% for departamento in object_list %}
+        {{ departamento }}
+        <br>
+    {% endfor %}
+
+{% endblock %}
