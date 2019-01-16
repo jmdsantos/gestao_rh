@@ -1,15 +1,16 @@
 {% extends 'base.html' %}
 
 {% block main %}
-    <h1>Banco de Horas</h1>
+    Banco de Horas
     <br>
+    {% if not object_list %}
+        <h1>Não existe registro de horas extras de banco de dados</h1>
+    {% endif %}
     {% for registro_re in object_list %}
         <a href="{% url 'update_hora_extra' registro_re.id %}">
             {{ registro_re }}
         </a>
-
         <br>
     {% endfor %}
-
 
 {% endblock %}

@@ -9,6 +9,9 @@
 
     {{ form|bootstrap }}
     <button type="submit">Salvar</button>
+    <a href="{% url 'delete_hora_extra' object.id %}" class="btn btn-danger">
+            Deletar
+        </a>
 </form>
 
 {% endblock %}
