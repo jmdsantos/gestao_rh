@@ -11,9 +11,13 @@
     <button type="submit">Salvar</button>
 </form>
 <br>
-<a href="{% url 'create_documento' object.id %}" class="btn btn-success">Adicionar documento</a>
+{% if object %}
+    <a href="{% url 'create_documento' object.id %}" class="btn btn-success">Adicionar documento</a>
+{% endif %}
 <br>
-{% for documento in object.documento_set.all %}
-    <a href="{{ documento.arquivo.url }} "> {{ documento }} </a><br>
-{% endfor %}
+{% if object.documento_set.all %}
+    {% for documento in object.documento_set.all %}
+        <a href="{{ documento.arquivo.url }} "> {{ documento }} </a><br>
+    {% endfor %}
+{% endif %}
 {% endblock %}
